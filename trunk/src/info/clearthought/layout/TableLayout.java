@@ -253,7 +253,7 @@ import java.lang.reflect.*;
  * }
  * </pre>
  *
- * @version 3.3 April 8, 2005
+ * @version 3.4 June 14, 2005
  * @author  Daniel E. Barbalace
  */
 
@@ -1723,12 +1723,42 @@ protected int [] calculateSizeAndOffset
     if (isColumn)
     {
         offset += hGap * entry.cr1[C];
-        size += hGap * (entry.cr2[C] - entry.cr1[C]);
+		int cumlativeGap = hGap * (entry.cr2[C] - entry.cr1[C]);
+		
+		switch (entryAlignment)
+		{
+			case RIGHT :
+				offset += cumlativeGap;
+			break;
+			
+			case CENTER :
+				offset += cumlativeGap >> 1;
+			break;
+				
+			case FULL :
+				size += cumlativeGap;
+			break;
+		}
     }
     else
     {
         offset += vGap * entry.cr1[R];
-        size += vGap * (entry.cr2[R] - entry.cr1[R]);
+		int cumlativeGap = vGap * (entry.cr2[R] - entry.cr1[R]); 
+		
+		switch (entryAlignment)
+		{
+			case BOTTOM :
+				offset += cumlativeGap;
+			break;
+			
+			case CENTER :
+				offset += cumlativeGap >> 1;
+			break;
+				
+			case FULL :
+				size += cumlativeGap;
+			break;
+		}
     }
 
     // Package return values
