@@ -43,7 +43,7 @@ import java.util.*;
 /**
  * TableLayoutConstraints binds components to their constraints.
  *
- * @version 1.2 March 15, 2004
+ * @version 2.0 March 14, 2004
  * @author  Daniel E. Barbalace
  */
 
@@ -75,6 +75,78 @@ public TableLayoutConstraints ()
 {
     col1 = row1 = col2 = col2 = 0;
     hAlign = vAlign = FULL;
+}
+
+
+
+/**
+ * Constructs an TableLayoutConstraints a set of constraints.
+ *
+ * @param col      column where the component is placed
+ * @param row      row where the component is placed
+ */
+
+public TableLayoutConstraints (int col, int row)
+{
+	this(col, row, col, row, FULL, FULL);
+}
+
+
+
+/**
+ * Constructs an TableLayoutConstraints a set of constraints.
+ *
+ * @param col1      column where upper-left cornor of the component is placed
+ * @param row1      row where upper-left cornor of the component is placed
+ * @param col2      column where lower-right cornor of the component is placed
+ * @param row2      row where lower-right cornor of the component is placed
+ */
+
+public TableLayoutConstraints (int col1, int row1, int col2, int row2)
+{
+	this(col1, row1, col2, row2, FULL, FULL);
+}
+
+
+
+/**
+ * Constructs an TableLayoutConstraints a set of constraints.
+ *
+ * @param col1      column where upper-left cornor of the component is placed
+ * @param row1      row where upper-left cornor of the component is placed
+ * @param col2      column where lower-right cornor of the component is placed
+ * @param row2      row where lower-right cornor of the component is placed
+ * @param hAlign    horizontal justification of a component in a single cell
+ * @param vAlign    vertical justification of a component in a single cell
+ */
+
+public TableLayoutConstraints
+    (int col1, int row1, int col2, int row2, int hAlign, int vAlign)
+{
+    this.col1 = col1;
+    this.row1 = row1;
+    this.col2 = col2;
+    this.row2 = row2;
+
+    if ((hAlign == LEFT) ||
+        (hAlign == RIGHT) ||
+        (hAlign == CENTER) ||
+        (hAlign == FULL) ||
+        (hAlign == TRAILING))
+    {
+        this.hAlign = hAlign;
+    }
+    else
+        this.hAlign = FULL;
+
+	if ((vAlign == LEFT) ||
+		(vAlign == RIGHT) ||
+		(vAlign == CENTER))
+	{
+		this.vAlign = vAlign;
+	}
+    else
+        this.vAlign = FULL;
 }
 
 
@@ -198,48 +270,6 @@ public TableLayoutConstraints (String constraints)
     // Make sure col2 >= col1
     if (col2 < col1)
         col2 = col1;
-}
-
-
-
-/**
- * Constructs an TableLayoutConstraints a set of constraints.
- *
- * @param col1      column where upper-left cornor of the component is placed
- * @param row1      row where upper-left cornor of the component is placed
- * @param col2      column where lower-right cornor of the component is placed
- * @param row2      row where lower-right cornor of the component is placed
- * @param hAlign    horizontal justification of a component in a single cell
- * @param vAlign    vertical justification of a component in a single cell
- */
-
-public TableLayoutConstraints
-    (int col1, int row1, int col2, int row2, int hAlign, int vAlign)
-{
-    this.col1 = col1;
-    this.row1 = row1;
-    this.col2 = col2;
-    this.row2 = row2;
-
-    if ((hAlign == LEFT) ||
-        (hAlign == RIGHT) ||
-        (hAlign == CENTER) ||
-        (hAlign == FULL) ||
-        (hAlign == TRAILING))
-    {
-        this.hAlign = hAlign;
-    }
-    else
-        this.hAlign = FULL;
-
-	if ((vAlign == LEFT) ||
-		(vAlign == RIGHT) ||
-		(vAlign == CENTER))
-	{
-		this.vAlign = vAlign;
-	}
-    else
-        this.vAlign = FULL;
 }
 
 
