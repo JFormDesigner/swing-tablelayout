@@ -39,6 +39,7 @@ package example2;
 
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 import info.clearthought.layout.TableLayout;
@@ -52,8 +53,20 @@ import info.clearthought.layout.TableLayout;
  * @version 1.0, June 14, 2005
  */
 
-public class Multicell
+public class Toggle1 implements ActionListener
 {
+	
+	
+	
+	/** Instance of TableLayout we are using */
+	private static TableLayout layout;
+	
+	/** Checkbox that indicates whether or not to notify the user when the
+	    Internet connection goes down. */
+    private static JCheckBox checkboxNotify;
+    
+    /** Container using the layout */
+    private static Container container;
     
     
     
@@ -86,7 +99,10 @@ public class Multicell
         JButton buttonUninstall = new JButton("Uninstall");
         JButton buttonProperties = new JButton("Properties");
         JCheckBox checkboxShowIcon = new JCheckBox("Show icon in notification area when connected");
-        JCheckBox checkboxNotify = new JCheckBox("Notify me when this connection has limited or no connectivity");
+        checkboxNotify = new JCheckBox("Notify me when this connection has limited or no connectivity");
+        checkboxNotify.addActionListener(new Toggle1());
+        JLabel labelTimeout = new JLabel("Timeout:");
+        JTextField textfieldTimeout = new JTextField();
         JButton buttonOK = new JButton("OK");
         JButton buttonCancel = new JButton("Cancel");
         
@@ -96,10 +112,10 @@ public class Multicell
         double emptySpace = 10;
         double [] columnSize = {border, 1.0 / 3.0, TableLayout.FILL, 1.0 / 3.0, border};
         double [] rowSize = {border, border};
-        TableLayout layout = new TableLayout(columnSize, rowSize);
+        layout = new TableLayout(columnSize, rowSize);
         layout.setVGap(2);
         layout.setHGap(5);
-        Container container = frame.getContentPane();
+        container = frame.getContentPane();
         container.setLayout(layout);
         
         // Add controls
@@ -122,15 +138,48 @@ public class Multicell
         container.add(checkboxShowIcon, "1, 8, 3, 8");
         layout.insertRow(9, p);
         container.add(checkboxNotify, "1, 9, 3, 9");
-        layout.insertRow(10, emptySpace);
-        layout.insertRow(11, p);
-        container.add(buttonOK, "2, 11");
-        container.add(buttonCancel, "3, 11");
+        layout.insertRow(10, p);
+        container.add(labelTimeout, "1, 10, RIGHT, CENTER");
+        container.add(textfieldTimeout, "2, 10, 3, 10");
+        layout.insertRow(11, emptySpace);
+        layout.insertRow(12, p);
+        container.add(buttonOK, "2, 12");
+        container.add(buttonCancel, "3, 12");
+        
+        // Note: We don't want to show the timeout row initially because the
+        // checkbox will not be checked.  However, we want to include the
+        // timeout row's height in the calculation done by Frame.pack().
+        // So we call updateDynamicRows() after pack() has been called.
         
         // Show frame
         frame.pack();
-        frame.setVisible(true);
+        updateDynamicRows();
+		frame.setVisible(true);
         frame.toFront();
+    }
+    
+    
+    
+    /**
+     * Invoked when the checkbox is toggled.
+     */
+    
+    public void actionPerformed (ActionEvent e)
+    {
+    	updateDynamicRows();
+    }
+    
+    
+    
+    /**
+     * Updates the visibility of dynamic rows.
+     */
+    
+    private static void updateDynamicRows()
+    {
+    	layout.setRow(10, checkboxNotify.isSelected() ? TableLayout.PREFERRED : 0);
+    	container.invalidate();
+    	container.validate();
     }
     
     
