@@ -189,7 +189,7 @@ public class Scrolling2 implements ActionListener, TreeSelectionListener
         double p = TableLayout.PREFERRED;
         double border = 10;
         double [] columnSize =
-        	{p, border, border, p, p, p, TableLayout.FILL, border};
+            {p, border, border, p, p, p, TableLayout.FILL, border};
         double [] rowSize = {p, border, p, p, TableLayout.FILL, border, p};
         layout = new TableLayout(columnSize, rowSize);
         layout.setHGap(5);
@@ -251,7 +251,7 @@ public class Scrolling2 implements ActionListener, TreeSelectionListener
         
         // Left menu
         d = leftMenu.getPreferredSize();
-        for (int i = 0; i < d.width; i++)
+        for (int i = 0; i < d.width - 1; i += 2)
         {
             layout.setColumn(0, i);
             container.invalidate();
@@ -272,7 +272,7 @@ public class Scrolling2 implements ActionListener, TreeSelectionListener
     {
         try
         {
-            Thread.sleep(10);
+            Thread.sleep(1);
         }
         catch (InterruptedException e) {}
     }
@@ -456,17 +456,35 @@ public class Scrolling2 implements ActionListener, TreeSelectionListener
             int i = 0;
             String [] letter = {"J", "a", "v", "a"};
             
+            // Some optimizing done since we will call this method often
+            // during the transitions
+            double coeff = 0.02 * Math.PI;
+            double vMax = 0.25 * d.height;
+            double phaseDelta = coeff * 10;
+            double phase = 0;
+            
+            double [] offset = new double[10];
+            for (int c = 0; c < 10; c++)
+            {
+                offset[c] = vMax * Math.sin(phase);
+                phase += phaseDelta;
+            }
+            
+            int c = 0;
+            int halfHeight = d.height >> 1;
+            
             while (x < d.width)
             {
-                double offset = (d.height * Math.sin(2 * Math.PI * x / 100) / 4);
-                g2.translate(x, offset);
-                g2.drawString(letter[i++], 0, d.height / 2);
-                g2.translate(-x, -offset);
-
+                g2.translate(x, offset[c]);
+                g2.drawString(letter[i++], 0, halfHeight);
+                g2.translate(-x, -offset[c++]);
                 x += 10;
                 
                 if (i == letter.length)
                     i = 0;
+                
+                if (c == 10)
+                    c = 0;
             }
         }
     }

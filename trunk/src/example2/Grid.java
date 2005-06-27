@@ -58,6 +58,7 @@ public final class Grid extends Component
     
     
     private static Color gridColor = Color.BLACK;
+    private static Color fillColor = null;
     
     
     
@@ -67,6 +68,7 @@ public final class Grid extends Component
     
     public static void main (String args[])
     {
+        setFillColor(Color.BLUE);
         String className = "example2.MulticellJustify";
         
         if (args.length == 1)
@@ -176,6 +178,32 @@ public final class Grid extends Component
     
     
     /**
+     * Gets the fill color.
+     * 
+     * @return the fill color
+     */
+    
+    public static Color getFillColor()
+    {
+        return fillColor;
+    }
+    
+    
+    
+    /**
+     * Sets the fill color.
+     * 
+     * @param color    new fill color
+     */
+    
+    public static void setFillColor (Color color)
+    {
+        fillColor = color;
+    }
+    
+    
+    
+    /**
      * Prevent creation of instances outside of this class.
      */
     
@@ -194,8 +222,21 @@ public final class Grid extends Component
     public void paint (Graphics g)
     {
         Dimension d = getSize();
-        g.setColor(gridColor);
-        g.drawRect(0, 0, d.width - 1, d.height - 1);
+        
+        if (gridColor != null)
+        {
+            g.setColor(gridColor);
+            g.drawRect(0, 0, d.width - 1, d.height - 1);
+        }
+        
+        if (fillColor != null)
+        {
+            Graphics2D g2d = (Graphics2D) g;
+            g2d.setComposite
+                (AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.25f));
+            g2d.setPaint(fillColor);
+            g2d.fill(new Rectangle(1, 1, d.width - 1, d.height - 1));
+        }
     }
     
     
