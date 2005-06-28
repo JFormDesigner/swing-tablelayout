@@ -5,7 +5,7 @@
     <title>Example: Multicell</title>
     <vendor>Clearthought</vendor>
     <homepage href="https://tablelayout.dev.java.net/" />
-    <icon href="images/LaunchExample.gif" width="32" height="32" />
+    <icon href="images/TableLayout-Part2.gif" width="32" height="32" />
 
     <description>Demonstrates how to make components span cells with TableLayout.</description>
     <description kind="short">Components that span cells</description>
