@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<jnlp spec="1.0+" codebase="https://tablelayout.dev.java.net/articles/TableLayoutTutorialPart2" href="apps/multicellJustified.jnlp">
+<jnlp spec="1.0+" codebase="https://tablelayout.dev.java.net/articles/TableLayoutTutorialPart2" href="apps/multicellJustify.jnlp">
   <information>
     <title>Example: Multicell Justification</title>
     <vendor>Clearthought</vendor>
