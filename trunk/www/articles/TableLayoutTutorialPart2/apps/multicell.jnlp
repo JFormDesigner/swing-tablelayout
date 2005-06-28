@@ -1,0 +1,28 @@
+<!--
+###############################################################################
+#
+# @(#)template.jnlp	1.3 01/04/04
+#
+# JNLP File for Example Application
+#
+###############################################################################
+ -->
+
+
+<?xml version="1.0" encoding="utf-8"?> 
+
+<jnlp spec="1.0+"
+      codebase="https://tablelayout.dev.java.net/source/browse/tablelayout/articles/TableLayoutTutorialPart2"
+      href="apps/multicell.jnlp">
+   <information> 
+      <title>Multicell Example</title> 
+      <vendor>Daniel E. Barbalace</vendor>
+      <description>Demonstrates components that span cells.</description>
+      <offline-allowed/> 
+   </information> 
+   <resources>
+      <j2se version="1.5"/>
+      <jar href="apps/Example2.jar" main="true" download="eager"/>
+   </resources>
+   <application-desc main-class="example2.Multicell"/>
+</jnlp> 
