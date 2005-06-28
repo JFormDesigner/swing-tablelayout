@@ -1,0 +1,28 @@
+<!--
+###############################################################################
+#
+# @(#)template.jnlp	1.3 01/04/04
+#
+# JNLP File for Draw Demo Application
+#
+###############################################################################
+ -->
+
+
+<?xml version="1.0" encoding="utf-8"?> 
+
+<jnlp spec="0.2 1.0"
+      codebase="http://java.sun.com/products/jfc/tsc/articles/tablelayout/apps/"
+      href="grid.jnlp">
+   <information> 
+      <title>Grid Versus TableLayout</title> 
+      <vendor>Daniel E. Barbalace</vendor>
+      <description>A comparison of GridLayout and TableLayout</description>
+      <offline-allowed/> 
+   </information> 
+   <resources>
+      <j2se version="1.3+ 1.2+"/>
+      <jar href="TableLayout.jar" main="true" download="eager"/>
+   </resources>
+   <application-desc main-class="example.GridVersusTable"/>
+</jnlp> 
