@@ -1,28 +1,29 @@
-<!--
-###############################################################################
-#
-# @(#)template.jnlp	1.3 01/04/04
-#
-# JNLP File for Example Application
-#
-###############################################################################
- -->
+<?xml version="1.0" encoding="utf-8"?>
 
+<jnlp spec="1.0+" codebase="http://www.mindprod.com/webstarts" href="setclock.jnlp">
+  <information>
+    <title>Example: Multicell</title>
+    <vendor>Clearthought</vendor>
+    <homepage href="https://tablelayout.dev.java.net/" />
+    <icon
+     href="https://tablelayout.dev.java.net/articles/TableLayoutTutorialPart2/images/LaunchExample.gif"
+     width="32" height="32" />
 
-<?xml version="1.0" encoding="utf-8"?> 
+    <description>Demonstrates how to make components span cells with TableLayout.</description>
+    <description kind="short">Components that span cells</description>
+    <description kind="tooltip">Mutlicell</description>
+  </information>
 
-<jnlp spec="1.0+"
-      codebase="https://tablelayout.dev.java.net/source/browse/tablelayout/articles/TableLayoutTutorialPart2"
-      href="apps/multicell.jnlp">
-   <information> 
-      <title>Multicell Example</title> 
-      <vendor>Daniel E. Barbalace</vendor>
-      <description>Demonstrates components that span cells.</description>
-      <offline-allowed/> 
-   </information> 
-   <resources>
-      <j2se version="1.4+"/>
-      <jar href="apps/Example2.jar" main="true" download="eager"/>
-   </resources>
-   <application-desc main-class="example2.Multicell"/>
-</jnlp> 
+  <resources>
+    <j2se version="1.5+" href="http://java.sun.com/products/autodl/j2se" />
+    <j2se version="1.4+" href="http://java.sun.com/products/autodl/j2se" />
+    <jar href="Example1.jar" />
+  </resources>
+
+  <security>
+    <all-permissions />
+  </security>
+
+  <!-- application class with main method -->
+  <application-desc main-class="example2.Multicell" />
+</jnlp>
