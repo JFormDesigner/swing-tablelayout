@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<jnlp spec="1.0+" codebase="https://tablelayout.dev.java.net/articles/TableLayoutTutorialPart2" href="apps/toggle1.jnlp">
+  <information>
+    <title>Example: Toggling Rows</title>
+    <vendor>Clearthought</vendor>
+    <homepage href="https://tablelayout.dev.java.net/"/>
+    <icon href="images/TableLayout-Part2.gif" width="32" height="32"/>
+
+    <description>Demonstrates how to toggle the visibility of rows with TableLayout.</description>
+    <description kind="short">Toggle the visibility of rows</description>
+    <description kind="tooltip">Toggle rows</description>
+  </information>
+
+  <resources>
+    <j2se version="1.4+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="apps/Example2.jar"/>
+  </resources>
+
+  <!-- application class with main method -->
+  <application-desc main-class="example2.Toggle1"/>
+</jnlp>
