@@ -9,7 +9,7 @@
 
     <description>Demonstrates how to make components span cells with TableLayout.</description>
     <description kind="short">Components that span cells</description>
-    <description kind="tooltip">Mutlicell</description>
+    <description kind="tooltip">Hello</description>
   </information>
 
   <resources>
