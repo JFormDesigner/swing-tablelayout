@@ -17,10 +17,6 @@
     <jar href="apps/Example2.jar" />
   </resources>
 
-  <security>
-    <all-permissions />
-  </security>
-
   <!-- application class with main method -->
   <application-desc main-class="example2.Multicell" />
 </jnlp>
