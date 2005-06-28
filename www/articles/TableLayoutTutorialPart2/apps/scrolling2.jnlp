@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<jnlp spec="1.0+" codebase="https://tablelayout.dev.java.net/articles/TableLayoutTutorialPart2" href="apps/scrolling2.jnlp">
+  <information>
+    <title>Example: Making an Entrance</title>
+    <vendor>Clearthought</vendor>
+    <homepage href="https://tablelayout.dev.java.net/"/>
+    <icon href="images/TableLayout-Part2.gif" width="32" height="32"/>
+
+    <description>Demonstrates a nice scolling effect to introduce a GUI using TableLayout.</description>
+    <description kind="short">Makes components move by scrolling their rows or columns</description>
+    <description kind="tooltip">Scrolling effect</description>
+  </information>
+
+  <resources>
+    <j2se version="1.4+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="apps/Example2.jar"/>
+  </resources>
+
+  <!-- application class with main method -->
+  <application-desc main-class="example2.Scrolling2"/>
+</jnlp>
