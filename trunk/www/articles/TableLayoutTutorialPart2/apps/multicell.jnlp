@@ -12,7 +12,7 @@
 <?xml version="1.0" encoding="utf-8"?> 
 
 <jnlp spec="1.0+"
-      codebase="https://tablelayout.dev.java.net/source/browse/tablelayout/articles/TableLayoutTutorialPart2"
+      codebase="http://tablelayout.dev.java.net/source/browse/tablelayout/articles/TableLayoutTutorialPart2"
       href="apps/multicell.jnlp">
    <information> 
       <title>Multicell Example</title> 
