@@ -12,7 +12,7 @@
 <?xml version="1.0" encoding="utf-8"?> 
 
 <jnlp spec="1.0+"
-      codebase="http://tablelayout.dev.java.net/source/browse/tablelayout/articles/TableLayoutTutorialPart2"
+      codebase="https://tablelayout.dev.java.net/source/browse/tablelayout/articles/TableLayoutTutorialPart2"
       href="apps/multicell.jnlp">
    <information> 
       <title>Multicell Example</title> 
@@ -21,7 +21,7 @@
       <offline-allowed/> 
    </information> 
    <resources>
-      <j2se version="1.5"/>
+      <j2se version="1.4+"/>
       <jar href="apps/Example2.jar" main="true" download="eager"/>
    </resources>
    <application-desc main-class="example2.Multicell"/>
