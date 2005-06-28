@@ -13,8 +13,7 @@
   </information>
 
   <resources>
-    <j2se version="1.5+" href="http://java.sun.com/products/autodl/j2se" />
-    <j2se version="1.4+" href="http://java.sun.com/products/autodl/j2se" />
+    <j2se version="1.4" href="http://java.sun.com/products/autodl/j2se" />
     <jar href="apps/Example2.jar" />
   </resources>
 
