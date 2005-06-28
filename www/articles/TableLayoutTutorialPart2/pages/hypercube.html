@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head><title>How do draw a hypercube</title></head>
+<body bgcolor="#ffffff" link="#000000" text="#000000" vlink="#800080">
+
+<p></p>
+
+<font face="Courier New" size="2"><p>Before drawing a hypercube, consider how to draw a cube.</p>
+<p>&nbsp;<img src="hypercube_files/image01.gif" height="118" width="714"></p>
+<p>A cube is made up of six squares. Only two will be parallel to the
+xy axis. The other four would have to be imagined by two-dimensional
+people. Similarly, a hypercube is made up of eight cubes. Only two are
+parallel to the xyz space. The other six must be imagined by
+three-dimensional people.</p>
+<p>Let's draw the cube by first drawing two squares. Lets label each point in each square with a number from 1 to 4.</p>
+<p>&nbsp;<img src="hypercube_files/image02.gif" height="126" width="181"></p>
+<p>Now connect each point in one square with the corresponding point in the other square.</p>
+</font>
+
+<p><img src="hypercube_files/image03.gif" height="127" width="182"></p>
+<font face="Courier New" size="2"><p>Now you have a cube -- well, not
+exactly since the edges are not all equal. But it's easier to draw some
+of the edges elongated. So I'll do the same with the hypercube, thus
+I'll really draw a hyper rectangular prism. A hypercube looks almost
+the same, but its harder to see all the (3D) sides at once.</p>
+<p>A line is the area between two terminal points. A square is the area
+between to parallel lines. A cube is the area between two parallel
+squares. A hypercube is the area between two parallel cubes. So let's
+draw two parallel cubes and label the points o
+n each cube.</p>
+</font>
+
+<p><img src="hypercube_files/image04.gif" height="129" width="493"></p>
+<font face="Courier New" size="2">
+</font><p><font face="Courier New" size="2">When we render a cube on a
+two-dimensional surface, we don't put the two parallel squares exactly
+parallel. We move one slightly up to provide prospective. For the same
+reason, let's move one of the cubes slightly up.</font></p>
+<p><font face="Courier New" size="2">&nbsp;<img src="hypercube_files/image05.gif" height="154" width="470"></font></p>
+<p><font face="Courier New" size="2">Now let's connect the corresponding points in the two cubes.</font></p>
+
+
+<p><img src="hypercube_files/image06.gif" height="153" width="418"></p>
+<font face="Courier New" size="2"><p>These are all the edges in the
+hypercube. But it's too hard to visualize in black and white. So let's
+go back to the cubes. This time let's add color. A cube can be draw as
+four squares. Let's make each square a different color.</p>
+<p>&nbsp;<img src="hypercube_files/image07.gif" height="130" width="184"></p>
+<p>You may have noticed that I've drawn each of the 12 edges twice. The
+edges that are part of more than two squares, I've drawn in both in
+both colors so that it is easy to see each square. However, they are
+the same edge.</p>
+<p>The sides of the cube are:</p>
+</font>
+
+<pre><font color="#0000ff">	front</font>
+<font color="#ff0000">	back</font>
+<font color="#ff00ff">	left</font>
+<font color="#008000">	right</font>
+<font color="#0000ff">	top (dashed)</font>
+<font color="#ff0000">	bottom (dashed)</font></pre>
+<font face="Courier New" size="2">
+<p>Now let's draw the two cubes in different colors.</p>
+<p>&nbsp;<img src="hypercube_files/image08.gif" height="153" width="471"></p>
+<p>In the hypercube, there will be eight sides:</p>
+</font>
+<pre>
+<font color="#0000ff">	front</font>
+<font color="#ff0000">	back</font>
+<font color="#ff00ff">	left</font>
+<font color="#008000">	right</font>
+<font color="#0000ff">	top (dashed)</font>
+<font color="#ff0000">	bottom (dashed)</font>
+<font color="#ff00ff">	x (dashed)</font>
+<font color="#008000">	y (dashed)</font></pre>
+<font face="Courier New" size="2"><p>I call the two new sides x and y
+for lack of a better name. Let's add the front and back sides of the
+hypercube. Remember that each side of a hypercube is a cube.</p></font>
+
+<p><img src="hypercube_files/image09.gif" height="175" width="472"></p>
+<font face="Courier New" size="2"></font><p><font face="Courier New" size="2">The </font><font color="#ff00ff" face="Courier New" size="2">magenta cube</font><font face="Courier New" size="2"> is parallel to the </font><font color="#008000" face="Courier New" size="2">green cube</font><font face="Courier New" size="2">. Both the </font><font color="#ff00ff" face="Courier New" size="2">magenta cube</font><font face="Courier New" size="2"> and the </font><font color="#008000" face="Courier New" size="2">green cube</font><font face="Courier New" size="2"> are perpendicular to the </font><font color="#0000ff" face="Courier New" size="2">blue cube</font><font face="Courier New" size="2">. Yet, the </font><font color="#0000ff" face="Courier New" size="2">blue cube</font><font face="Courier New" size="2"> shares one square face
+ with the </font><font color="#ff00ff" face="Courier New" size="2">magenta cube</font><font face="Courier New" size="2"> and another square face with the </font><font color="#008000" face="Courier New" size="2">green cube</font><font face="Courier New" size="2">.
+ In three dimensions, this would be an optical illusion, but in four dimensions it is a perfectly valid form.</font></p>
+
+<p><font face="Courier New" size="2">Remember that the front square of the </font><font color="#ff00ff" face="Courier New" size="2">magenta cube</font><font face="Courier New" size="2"> is just as close to us as the front square of the </font><font color="#008000" face="Courier New" size="2">green cube</font><font face="Courier New" size="2">. The </font><font color="#0000ff" face="Courier New" size="2">blue cube</font><font face="Courier New" size="2"> is not tilted. It is parallel to the fourth axis.</font></p>
+
+<p><font face="Courier New" size="2">Now I've already drawn every edge
+in the hypercube -- some of them twice. However, I've only show four of
+the cubic faces of the hypercube. You might have noticed that there is
+no top or bottom. Let's add the top now.</font></p>
+
+
+<p><img src="hypercube_files/image10.gif" height="178" width="472"></p>
+<font face="Courier New" size="2"><p>The top side of the hypercube does
+not appear to be a cube. However, it is. Unfortunately, we are
+rendering the hypercube in two dimensions. The top side goes through
+the fourth axis like the front side, but the top side is parallel to
+the front side. Since we rendered the front side in a "nice" way, we're
+forced to render the top side in a "not so nice" way. The top side
+looks like a cube whose faces fell down to the left. However, this
+configuration allows the top side of the hypercube to be covered. The
+bottom side can be rendered in a similar fashion.</p>
+</font>
+
+<p><img src="hypercube_files/image11.gif" height="181" width="471"></p>
+<font face="Courier New" size="2"></font><p><font face="Courier New" size="2">We
+still have to show side x and side y. These two sides will appear even
+more weird than the top and bottom sides. Cubic side x will connect the
+left square side of the </font><font color="#ff00ff" face="Courier New" size="2">magenta cube</font><font face="Courier New" size="2"> with the left square side of the </font><font color="#008000" face="Courier New" size="2">green cube</font><font face="Courier New" size="2">. Likewise, cubic side y will connect the right square side of </font><font color="#ff00ff" face="Courier New" size="2">magenta cube</font><font face="Courier New" size="2"> with the right square side of the </font><font color="#008000" face="Courier New" size="2">green cube</font><font face="Courier New" size="2">. To make these two cubic sides easy to see, let's draw only the </font><font color="#ff00ff" face="Courier New" size="2">left</font><font face="Courier New" size="2">, </font><font color="#008000" face="Courier New" size="2">right</font>
+<font face="Courier New" size="2">, FONT&gt;<font color="#ff00ff" face="Courier New" size="2">x (dashed)</font><font face="Courier New" size="2">, and </font><font color="#008000" face="Courier New" size="2">y (dashed)</font><font face="Courier New" size="2"> sides of the hypercube.</font></font></p>
+<p><font face="Courier New" size="2"><font face="Courier New" size="2">Here's side x.</font></font></p>
+
+
+<p><font face="Courier New" size="2"><img src="hypercube_files/image12.gif" height="151" width="470"></font></p>
+<font face="Courier New" size="2"><font face="Courier New" size="2"><p>Here's both side x and side y.</p>
+<p>&nbsp;<img src="hypercube_files/image13.gif" height="151" width="470"></p>
+<p>Finally, here's the hypercube in all of its glory.</p>
+</font>
+
+</font><p><font face="Courier New" size="2"><img src="hypercube_files/image14.gif" height="183" width="476"></font></p>
+<font face="Courier New" size="2"><font face="Courier New" size="2"></font></font><p><font face="Courier New" size="2"><font face="Courier New" size="2">That's
+eight cubes, twenty squares, thirty two edges, and sixteen terminal
+points. Here it is again with the redundant rendering of edges removed.
+Can you still see all eight cubes?</font></font></p>
+
+<p><font face="Courier New" size="2"><img src="hypercube_files/image15.gif" height="175" width="470"></font></p>
+<font face="Courier New" size="2"><font face="Courier New" size="2"><p>Well,
+to be a true hypercube, all edges would have to be the same length. For
+clarity, I discarded this fact. But the true hypercube would actually
+look like this.</p></font>
+
+</font><p align="center"><font face="Courier New" size="2"><img src="hypercube_files/image16.gif" height="139" width="450"></font></p>
+<font face="Courier New" size="2"><font face="Courier New" size="2"><p>Let's find the eight cubes in the hypercube.</p></font>
+
+</font><p align="center"><font face="Courier New" size="2"><img src="hypercube_files/image17.gif" height="338" width="718"></font></p>
+<font face="Courier New" size="2"><font face="Courier New" size="2"></font></font><p><font face="Courier New" size="2"><font face="Courier New" size="2">If
+we wanted to, we could try drawing a hyper-hypercube, a five
+dimensional figure. However, rendering a five dimensional figure in two
+dimensions is very messy. It would be better to render a
+hyper-hypercube in three dimensions.</font></font></p>
+
+<font face="Courier New" size="2"><font face="Courier New" size="2"><br>
+    </font></font><p><font face="Courier New" size="2"><font face="Courier New" size="2"><a href="http://www.clearthought.info/math">Back to the mathematics page</a></font></font></p>
+<font face="Courier New" size="2"><font face="Courier New" size="2">    </font></font><p><font face="Courier New" size="2"><font face="Courier New" size="2"><a href="http://www.clearthought.info/">Back to main page</a></font></font></p>
+
+</body></html>
