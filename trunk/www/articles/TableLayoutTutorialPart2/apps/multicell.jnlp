@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<jnlp spec="1.0+" codebase="https://tablelayout.dev.java.net/articles/TableLayoutTutorialPart2" href="apps/mutlicell.jnlp">
+<jnlp spec="1.0+" codebase="https://tablelayout.dev.java.net/articles/TableLayoutTutorialPart2" href="apps/multicell.jnlp">
   <information>
     <title>Example: Multicell</title>
     <vendor>Clearthought</vendor>
@@ -13,9 +13,13 @@
   </information>
 
   <resources>
-    <j2se version="1.4" href="http://java.sun.com/products/autodl/j2se" />
+    <j2se version="1.4+" href="http://java.sun.com/products/autodl/j2se" />
     <jar href="apps/Example2.jar" />
   </resources>
+
+  <security>
+    <all-permissions />
+  </security>
 
   <!-- application class with main method -->
   <application-desc main-class="example2.Multicell" />
