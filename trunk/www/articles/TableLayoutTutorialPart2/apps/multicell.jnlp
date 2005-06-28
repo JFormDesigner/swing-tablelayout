@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<jnlp spec="1.0+" codebase="https://tablelayout.dev.java.net/" href="mutlicell.jnlp">
+<jnlp spec="1.0+" codebase="https://tablelayout.dev.java.net/articles/TableLayoutTutorialPart2" href="apps/mutlicell.jnlp">
   <information>
     <title>Example: Multicell</title>
     <vendor>Clearthought</vendor>
