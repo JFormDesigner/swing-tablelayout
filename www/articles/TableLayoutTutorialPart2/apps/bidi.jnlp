@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<jnlp spec="1.0+" codebase="https://tablelayout.dev.java.net/articles/TableLayoutTutorialPart2" href="apps/componentOrientation.jnlp">
+<jnlp spec="1.0+" codebase="https://tablelayout.dev.java.net/articles/TableLayoutTutorialPart2" href="apps/bidi.jnlp">
   <information>
     <title>Example: Component Orientation</title>
     <vendor>Clearthought</vendor>
@@ -18,5 +18,5 @@
   </resources>
 
   <!-- application class with main method -->
-  <application-desc main-class="example2.componentOrientation/>
+  <application-desc main-class="example2.Bidi"/>
 </jnlp>
