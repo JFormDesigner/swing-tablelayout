@@ -34,21 +34,21 @@
 				if (javawsInstalled)
 				{
 					document.write("<center><div align=center>");
-					document.write("<a href=" + jnlpUrl + "><img src=" + imageUrl + " width='130' height='107' BORDER='0'></a></div>");
-					document.write("<form action='" + jnlpUrl + "' method='get'><input type='submit' value='Launch'></form>");
-					document.write("</center>");
+					document.write("<a href=" + jnlpUrl + "><img src=" + imageUrl + " width='130' height='107' BORDER='0'><\/a><\/div>");
+					document.write("<form action='" + jnlpUrl + "' method='get'><input type='submit' value='Launch'><\/form>");
+					document.write("<\/center>");
 				}
 				else
 				{
 					document.write("<center><div align=center>");
-					document.write("<img src=" + imageUrl + " width='130' height='107' BORDER='0'></div>");
-					document.write("<form action='" + jnlpUrl + "' method='get'><input onClick='redirectToWebStart()' value='Launch'></form>");
-					document.write("</center>");
+					document.write("<img src=" + imageUrl + " width='130' height='107' BORDER='0'><\/div>");
+					document.write("<form action='" + jnlpUrl + "' method='get'><input onClick='redirectToWebStart()' value='Launch'><\/form>");
+					document.write("<\/center>");
 				}
-			}    
+			}
 		</script>
 		
-		<script language="VBScript">
+		<script language="VBScript" type="text/vbscript">
 			on error resume next
 			If isIE = "true" Then
 				If Not(IsObject(CreateObject("JavaWebStart.IsInstalled"))) Then
@@ -66,7 +66,7 @@
 		<table border="0" cellpadding="0" cellspacing="0">
 			<tr valign="top">
 				<td><img src="images/TableLayout-Part1.gif"/></td>
-				<td width="20px">&nbsp;</td>
+				<td width="20">&nbsp;</td>
 				<td>
 					<table border="0" cellpadding="0" cellspacing="0">
 						<tr><td><b>TableLayout Tutorial, Part 1</b></td></tr>
@@ -110,43 +110,43 @@
 				<td><table border="0" cellpadding="0" cellspacing="0">
 				<tr><td>&nbsp;</td><td><b><a href='#Introduction'>Introduction</a></b></td><td>&nbsp;</td></tr>
 				<tr><td>&nbsp;</td><td><a href='#WhatIs'>What&nbsp;is&nbsp;TableLayout?</a></td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Creating'>Creating&nbsp;a&nbsp;TableLayout</td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Creating'>Creating&nbsp;a&nbsp;TableLayout</a></td><td>&nbsp;</td></tr>
 				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 				</table></td>
 				
 				<td><table border="0" cellpadding="0" cellspacing="0">
 				<tr><td>&nbsp;</td><td><b><a href='#Sizes'>Column&nbsp;and&nbsp;Row&nbsp;Sizes</a></b></td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Absolute'>Absolute&nbsp;and&nbsp;Scalable&nbsp;Space</td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Order'>Order&nbsp;of&nbsp;Allocation</td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Rounding'>Rounding&nbsp;Considerations</td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Absolute'>Absolute&nbsp;and&nbsp;Scalable&nbsp;Space</a></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Order'>Order&nbsp;of&nbsp;Allocation</a></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Rounding'>Rounding&nbsp;Considerations</a></td><td>&nbsp;</td></tr>
 				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 				</table></td>
 				
 				<td><table border="0" cellpadding="0" cellspacing="0">
-				<tr><td>&nbsp;</td><td><b><a href='#Cells'>Cells</b></a></td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Adding'>Adding&nbsp;Components</td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Justification'>Justification</td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Multiple'>Multiple&nbsp;Cells</td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><b><a href='#Cells'>Cells</a></b></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Adding'>Adding&nbsp;Components</a></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Justification'>Justification</a></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Multiple'>Multiple&nbsp;Cells</a></td><td>&nbsp;</td></tr>
 				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 				</table></td>
 				
 				<td><table border="0" cellpadding="0" cellspacing="0">
 				<tr><td>&nbsp;</td><td><b><a href='#Theory'>Final&nbsp;Theory</a></b></td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Dynamic'>Dynamic&nbsp;Rows&nbsp;and&nbsp;Columns</td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Preferred'>Preferred&nbsp;Layout&nbsp;Size</td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Onward'>Onward</td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Dynamic'>Dynamic&nbsp;Rows&nbsp;and&nbsp;Columns</a></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Preferred'>Preferred&nbsp;Layout&nbsp;Size</a></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Onward'>Onward</a></td><td>&nbsp;</td></tr>
 				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 				</table></td>
 				
 				<td><table border="0" cellpadding="0" cellspacing="0">
 				<tr><td>&nbsp;</td><td><b><a href='#Examples'>Examples</a></b></td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Simple'>Simple</td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#GridLayout'>GridLayout&nbsp;Comparison</td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#GridBagLayout'>GridBagLayout&nbsp;Comparison</td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Typical'>A&nbsp;Typical&nbsp;GUI</td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Preferred'>Preferred&nbsp;Rows&nbsp;and&nbsp;Columns</td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Constraints'>TableLayoutConstraints</td><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td><a href='#Rad'>A&nbsp;RAD&nbsp;Tool</td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Simple'>Simple</a></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#GridLayout'>GridLayout&nbsp;Comparison</a></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#GridBagLayout'>GridBagLayout&nbsp;Comparison</a></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Typical'>A&nbsp;Typical&nbsp;GUI</a></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Preferred'>Preferred&nbsp;Rows&nbsp;and&nbsp;Columns</a></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Constraints'>TableLayoutConstraints</a></td><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td><a href='#Rad'>A&nbsp;RAD&nbsp;Tool</a></td><td>&nbsp;</td></tr>
 				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 				</table></td>
 			</tr>
@@ -154,8 +154,8 @@
 		<!-- End of Table of Contents -->
 
 		<!-- Section Introduction -->
-          <p><a name='Introduction'><font size='+2'><b>Introduction to TableLayout</b></font></a><p>
-          <p><a name='WhatIs'><b>What is TableLayout?</b></a><p>
+          <p><a name='Introduction'><font size='+2'><b>Introduction to TableLayout</b></font></a></p>
+          <p><a name='WhatIs'><b>What is TableLayout?</b></a></p>
 
           <p>
             TableLayout is a layout manager that partitions a container into a set of rows and columns.  The intersection of a row and
@@ -189,7 +189,7 @@
             them in the container.
           </p>
 
-          <p><a name='Creating'><b>Creating a TableLayout</b></a><p>
+          <p><a name='Creating'><b>Creating a TableLayout</b></a></p>
 
           <p>
             The illustration shows the division of the container at a one possible size.  What happens when the container is
@@ -277,7 +277,7 @@
             preferred size of 80x25 and the other with a preferred size of 50x25, the column will have a width of 80 pixels.
           </p>
 
-          <p><a name='Order'><b>Order of Allocation</b></a><p>
+          <p><a name='Order'><b>Order of Allocation</b></a></p>
 
           <p>
              The total width of a container is first allocated to absolute columns and preferred columns.  The remaining
@@ -318,7 +318,7 @@
             15%.
           </p>
 
-          <p><a name='Rounding'><b>Rounding Considerations</b></a><p>
+          <p><a name='Rounding'><b>Rounding Considerations</b></a></p>
 
           <p>
             One of the uses of TableLayout.FILL is to absorb rounding errors when rows or columns are given
@@ -362,7 +362,7 @@
             the component is resized as well, always being the exact same size as the cell. This is called full justification. 
           </p>
 
-          <p><a name='Justification'><b>Justification</b></a><p>
+          <p><a name='Justification'><b>Justification</b></a></p>
 
           <p>
             A component in a single cell can be justified both horizontally and vertically.  For each orientation there are
@@ -408,7 +408,7 @@
             </tr>
           </table>
 
-          <p><a name='Multiple'><b>Multiple Cells</b></a><p>
+          <p><a name='Multiple'><b>Multiple Cells</b></a></p>
 
           <p>
             A component can also be added to a rectangular set of cells.  This is done by specifying the upper, left
@@ -431,7 +431,7 @@
             There is no justification attribute for multi-celled components.
           </p>
 
-          <p><a name='Overlapping'><b>Overlapping and Hidden Components</b></a><p>
+          <p><a name='Overlapping'><b>Overlapping and Hidden Components</b></a></p>
 
           <p>
             Two components can occupy the same cell or have more than one cell in common.  Such components are said to be
@@ -461,7 +461,7 @@
             methods to accomidate this.
           </p>
 
-          <p><a name='Preferred'><b>Preferred Layout Size</b></a><p>
+          <p><a name='Preferred'><b>Preferred Layout Size</b></a></p>
 
           <p>
             One of the responsibilities of a layout manager is to determine the preferred size of a container based on the
@@ -495,7 +495,7 @@
             that the preferred size is determined.
           </p>
 
-          <p><a name='Onward'><b>Onward</b></a><p>
+          <p><a name='Onward'><b>Onward</b></a></p>
 
           <p>
             Now that we've covered the theory behind TableLayout, let's move on to some examples.
@@ -503,9 +503,9 @@
 		<!-- End Section Theory -->
 		
 		<!-- Section Simple -->
-          <p><a name='Examples'><a name='Simple'><font size='+2'><b>A Simple Example</b></font></a></a></p>
+          <p><a name='Examples'></a><a name='Simple'><font size='+2'><b>A Simple Example</b></font></a></p>
 
-          <p>The following code creates the simple TableLayout shown below.<p>
+          <p>The following code creates the simple TableLayout shown below.</p>
 
           <table border='0' cellpadding='4' cellspacing='0' bgcolor='#D0D0FF' width='100%'>
             <tr>
@@ -586,7 +586,7 @@ public class Simple
 
           <p>
             <img src='images/SimpleSnapshot.gif' align='left' hspace='5' vspace='5' title='Snapshot of Simple Frame'>
-            <img src='images/SimpleLineDiagram.gif' align='none' hspace='5' vspace='5' title='Line Diagram'>
+            <img src='images/SimpleLineDiagram.gif' hspace='5' vspace='5' title='Line Diagram'>
           </p>
 
           <p>
@@ -944,7 +944,7 @@ public class GridBagVersusTable
           </p>
 
           <p>
-            <img src='images/GridBagVersusTable1.gif' align='none' hspace='5' vspace='5' title='Packed Size'>
+            <img src='images/GridBagVersusTable1.gif' hspace='5' vspace='5' title='Packed Size'>
           </p>
 
           <p>
@@ -961,7 +961,7 @@ public class GridBagVersusTable
           </p>
 
           <p>
-            <img src='images/GridBagVersusTable2.gif' align='none' hspace='5' vspace='5' title='Enlarged Size'>
+            <img src='images/GridBagVersusTable2.gif' hspace='5' vspace='5' title='Enlarged Size'>
           </p>
 
           <p>
@@ -981,14 +981,9 @@ public class GridBagVersusTable
             In fact, everything that can be done with GridBagLayout can be done with TableLayout and vice versa.  The
             advantage of TableLayout is that it is much easier to understand and use.
           </p>
-        </td>
-      </tr>
 
-      <tr>
-        <td>&nbsp;</td>
-        <td>
           <p>
-            <img src='images/GridBagVersusTable3.gif' align='none' hspace='5' vspace='5' title='Shrunken Size'>
+            <img src='images/GridBagVersusTable3.gif' hspace='5' vspace='5' title='Shrunken Size'>
           </p>
 
           <p>
@@ -1248,12 +1243,7 @@ public class TypicalGui extends JFrame
           <p>
             <img src='images/TypicalGui.gif' align='left' hspace='5' vspace='5' title='Packed Size'>
           </p>
-        </td>
-      </tr>
 
-      <tr>
-        <td>&nbsp;</td>
-        <td>
           <p>
             This GUI is composed of thirteen top-level components: ten colored boxes, one JMenuBar, one JTextPane,
             and one JPanel that is used to hold several JButtons.  The code illustrates that rows can be added at
@@ -1437,7 +1427,7 @@ public class Preferred extends JFrame
 		<!-- End Section Preferred -->
 		
 		<!-- Section Constraints -->
-          <p><a name='Constraints'><font size='+2'><b>TableLayoutConstraints</b></font></a><p>
+          <p><a name='Constraints'><font size='+2'><b>TableLayoutConstraints</b></font></a></p>
 
           <p>
             The preceeding examples have expressed the layout constraints in terms of a simple string.  This is a
@@ -1465,6 +1455,7 @@ container.add (secondComponent, "5, 8, 6, 10");
             <tr>
               <td valign='top'>
                 <table border='0' cellpadding='4' cellspacing='0' bgcolor='#D0D0FF' width='100%'>
+                  <tr>
                     <td>
                       <pre>
 container.add (firstComponent,
@@ -1482,6 +1473,7 @@ container.add (secondComponent,
             <tr>
               <td valign='top'>
                 <table border='0' cellpadding='4' cellspacing='0' bgcolor='#D0D0FF' width='100%'>
+                  <tr>
                     <td>
                       <pre>
 TableLayoutConstraints c = new TableLayoutConstraints();
@@ -1528,12 +1520,10 @@ container.add (secondComponent, c);
             returns the TableLayoutConstraints associated with the given component.
             <pre>setConstraints(Component, TableLayoutConstraints)</pre> replaces the given component's
             constraints with the newly supplied constraints.  The next example will make use of these methods.
-          </p>
-        </td>
 		<!-- End Section Constraints -->
 		
 		<!-- Section Rad -->
-          <p><a name='Rad'><font size='+2'><b>A Rapid Application Development Tool</b></font><p>
+          <p><a name='Rad'><font size='+2'><b>A Rapid Application Development Tool</b></font></a></p>
 
           <p>
             The following example illustrates how to dynamically create, resize, and remove rows and columns from a
@@ -1575,7 +1565,7 @@ container.add (secondComponent, c);
             Clicking on a white spot in the panel will create a component (a Smiley face) that occupies the cell
             clicked.  Clicking on the Smiley will pop up a dialog box that can be used to adjust the constraints
             of the Smiley.
-          <p>
+          </p>
 
           <p>
             Play with the GUI tool to see how it works.  As you add rows and columns, you will also see lines
@@ -1660,7 +1650,7 @@ public class MyClass
             </tr>
           </table>
 
-          <p><b>Dynamically Manipulating Rows and Columns</b><p>
+          <p><b>Dynamically Manipulating Rows and Columns</b></p>
 
           <p>
             The <code>actionPerformed</code> method is called whenever one of the add, resize, remove buttons is pressed.  The code
@@ -1733,7 +1723,7 @@ public class MyClass
             some components will be removed and we don't want their images still being displayed.
           </p>
 
-          <p><b>Final Word</b><p>
+          <p><b>Final Word</b></p>
 
           <p>
             If you want to get more familiar with the nuts and bolts of dynamic layout manipulation, take a look at
