@@ -9,7 +9,7 @@
    </information> 
    <resources>
       <j2se version="1.3+ 1.2+"/>
-      <jar href="Example1.jar" main="true" download="eager"/>
+      <jar href="apps/Example1.jar" main="true" download="eager"/>
    </resources>
    <application-desc main-class="example.GridBagVersusTable"/>
 </jnlp> 
