@@ -18,5 +18,5 @@
   </resources>
 
   <!-- application class with main method -->
-  <application-desc main-class="example2.borderLeftMenu"/>
+  <application-desc main-class="example2.BorderLeftMenu"/>
 </jnlp>
