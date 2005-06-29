@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<jnlp spec="1.0+" codebase="https://tablelayout.dev.java.net/articles/TableLayoutTutorialPart2" href="apps/grid.jnlp">
+  <information>
+    <title>Example: Grid</title>
+    <vendor>Clearthought</vendor>
+    <homepage href="https://tablelayout.dev.java.net/"/>
+    <icon href="images/TableLayout-Part2.gif" width="32" height="32"/>
+
+    <description>Demonstrates how to see the grid used by an instance of TableLayout.</description>
+    <description kind="short">Displays the layout's grid</description>
+    <description kind="tooltip">Grid</description>
+  </information>
+
+  <resources>
+    <j2se version="1.4+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="apps/Example2.jar"/>
+  </resources>
+
+  <!-- application class with main method -->
+  <application-desc main-class="example2.Grid"/>
+</jnlp>
