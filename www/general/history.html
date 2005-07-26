@@ -1,0 +1,153 @@
+<html>
+	<head>
+		<title>TableLayout Testimonies</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	</head>
+
+	<body bgcolor="#FFFFFF" text="#000000">
+		
+	<h3>History and Future</h3>
+
+    <p>
+        TableLayout is a well-tested and well-used layout manager. It has been around in one form or another
+        since 1996. Over many years, TableLayout has been refined. It may now be as perfect as a layout manager
+        can be. So it is unlikely that there will be subsequent version unless someone suggests a change that
+        would significantly improve Tablelayout, and that change must be added to the core of TableLayout.
+    </p>
+
+    <p>
+        However, ancillary support for TableLayout may be added to this site. Some suggestions have been to add
+        TableLayout support to Netbeans, Forte, JBuilder, and other RAD tools. Since such ancillary "plug-ins"
+        are not necessary to use TableLayout, and may be tool or JDK specific, they would be provided as
+        extension jar files.
+    </p>
+    
+    <p>
+        The brief history of TableLayout is... 
+    </p>
+    
+    <table>
+        <tr valign="top">
+            <td><i>1996-2001</i></td>
+            <td>
+                TableLayout was written to the JDK 1.0 and JDK 1.1 using custom classes for LinkedLists, etc.
+                This version of TableLayout was never published, but was used by the author extensively.
+                Most of the layout manager was written up front, but over time a few useful features were added.
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        
+        <tr valign="top">
+            <td nowrap><i>2001</i></td>
+            <td>
+                TableLayout was modified to use only core Java classes from the JDK including the JDK 1.2 collections
+                framework.  Non-standard classes were removed.  The API for TableLayout was modified to be more
+                consistent with established Java conventions.<br><br>
+                      
+                The author contacted Sun and submitted the layout manager.  A Sun representative asked the author
+                to write an article about TableLayout for The Swing Connection.  The article was submitted to Sun
+                and reviewed along with the layout manager by several Sun architects.  TableLayout was further
+                refined based on the feedback from Sun.  The article and TableLayout were published on Sun's
+                website.  This was the first official version of TableLayout.
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        
+        <tr valign="top">
+            <td nowrap><i>2002</i></td>
+            <td>
+                The author received many positive messages from users across the world.  Some of the messages
+                contained requests for features like justification for components occupying more than one cell.
+                The requests that would most improve TableLayout were implemented.
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        
+        <tr valign="top">
+            <td nowrap><i>2002</i></td>
+            <td>
+                An extension jar for TableLayout was created based on an idea from a developer to use the
+                persistent delagation mechanism introduced in JDK 1.4 to save and load frames.
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+
+        <tr valign="top">
+            <td nowrap><i>2003 Oct 1</i></td>
+            <td>
+                A fix is provided for a problem dealing with the preferred size of containers containing
+                components spanning multiple cells with absolute widths/heights.
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        
+        <tr valign="top">
+            <td nowrap><i>2003 Nov 4</i></td>
+            <td>
+                TableLayout now supports component orientation.  Two new justifcations have been added:
+                LEADING and TRAILING.  Leading justification means components are left justified if
+                their container is left-oriented and right justified if their container is right-oriented.
+                Trailing justification is opposite.<br><br>
+
+                Also, a constructor in the form <code>new TableLayout(double [] columns, double [] rows)</code>
+                has been added for convenience.
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+
+        <tr valign="top">
+            <td nowrap><i>2003 Dec 11</i></td>
+            <td>
+                Corrected vertical gaps.
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        
+        <tr valign="top">
+            <td nowrap><i>2004 Feb 15</i></td>
+            <td>
+                Added leading and trailing constaints to TableLayoutConstraints.toString method.
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        
+        <tr valign="top">
+            <td nowrap><i>2004 May 9</i></td>
+            <td>
+                Added caching of the methodGetComponentOrientation field in TableLayout.
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        
+        <tr valign="top">
+            <td nowrap><i>2005 April 8</i></td>
+            <td>
+                Fixed leak of XML Decoder in TableLayoutPersistenceDelegate class located in TableLayoutPersistenceDelegate.jar.<br>
+                Fixed a javadoc comment for TableLayoutConstraints constructor.<br>
+                Fixed a bug in getting the minimum size of a container that used preferred column/row sizes and getting
+                the preferred size of a container that used minimum column/row sizes.
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr valign="top">
+            <td nowrap><i>2005 May 5</i></td>
+            <td>
+                Updated the javadoc description of TableLayout.
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        
+        <tr valign="top">
+            <td nowrap><i>2005 June 15</i></td>
+            <td>
+                Added convenience constructors to TableLayoutConstraints.  Fixed the sizes of cell spanning components
+                that were not full justified.  They were getting extra space from gaps.
+            </td>
+        </tr>
+    </table>
+
+    <p>
+      <a href="/index.html">Back to project home</a>
+    </p>
+	</body>
+</html>
