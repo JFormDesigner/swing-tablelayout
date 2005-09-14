@@ -253,7 +253,7 @@ import java.lang.reflect.*;
  * }
  * </pre>
  *
- * @version 3.4 June 14, 2005
+ * @version 4.0 September 14, 2005
  * @author  Daniel E. Barbalace
  */
 
