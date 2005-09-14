@@ -1531,6 +1531,11 @@ public void layoutContainer (Container container)
     if (dirty || (d.width != oldWidth) || (d.height != oldHeight))
         calculateSize(container);
 
+    // Get component orientation and insets
+    ComponentOrientation co = getComponentOrientation(container);
+    boolean isRightToLeft = (co != null) && !co.isLeftToRight();
+    Insets insets = container.getInsets();
+
     // Get components
     Component component[] = container.getComponents();
 
@@ -1589,10 +1594,8 @@ public void layoutContainer (Container container)
             int h = value[1];
             
             // Compensate for component orientation.
-            ComponentOrientation co = getComponentOrientation(container);
-
-            if (!co.isLeftToRight())
-                x = d.width - x - w;
+            if (isRightToLeft)
+                x = d.width - x - w + insets.left - insets.right;
            
             // Move and resize component
             component[counter].setBounds(x, y, w, h);
