@@ -74,7 +74,8 @@ public class TestAddition extends Frame implements ActionListener
             );
 
         // Show frame
-        show();
+        setVisible(true);
+        toFront();
     }
     
     

@@ -55,7 +55,8 @@ public class Simple
             );
 
         // Show frame
-        frame.show();
+        frame.setVisible(true);
+        frame.toFront();
 
 		System.out.println (layout.getConstraints(button[4]));
 		System.out.println (layout.getConstraints(button[5]));

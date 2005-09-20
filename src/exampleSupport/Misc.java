@@ -278,7 +278,8 @@ public static final Image createImage (int width, int height)
         dummyFrame = new Frame();
         dummyWindow = new Window(dummyFrame);
         dummyWindow.setSize (0, 0);
-        dummyWindow.show();
+        dummyWindow.setVisible(true);
+        dummyWindow.toFront();
     }
 
     // Use the window to create the image (since it has a peer)

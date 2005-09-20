@@ -81,7 +81,8 @@ public class Preferred extends JFrame
 
         pack();
         setResizable(false);
-        show();
+		setVisible(true);
+		toFront();
     }
 
 

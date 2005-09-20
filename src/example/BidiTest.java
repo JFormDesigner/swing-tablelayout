@@ -81,7 +81,8 @@ public class BidiTest extends JFrame implements ActionListener
 		}
 
 		setBounds(100, 100, 640, 480);
-		show();
+		setVisible(true);
+		toFront();
 	}
 
 
