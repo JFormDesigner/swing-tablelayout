@@ -146,7 +146,8 @@ public class RadTool extends Frame implements ActionListener
         // Show frame
         setBackground (Color.lightGray);
         setBounds (100, 100, 500, 400);
-        show();
+		setVisible(true);
+		toFront();
     }
 
 

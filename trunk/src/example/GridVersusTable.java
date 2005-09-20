@@ -29,7 +29,8 @@ public class GridVersusTable {
         // Show frame
         frame.pack();
         frame.setLocation (0, 10);
-        frame.show();
+		frame.setVisible(true);
+		frame.toFront();
 
         return frame;
     }
@@ -56,7 +57,8 @@ public class GridVersusTable {
         // Show frame
         frame.pack();
         frame.setLocation (200, 10);
-        frame.show();
+		frame.setVisible(true);
+		frame.toFront();
 
         return frame;
     }
@@ -81,7 +83,8 @@ public class GridVersusTable {
         // Show frame
         frame.pack();
         frame.setLocation (400, 10);
-        frame.show();
+		frame.setVisible(true);
+		frame.toFront();
 
         return frame;
     }

@@ -529,7 +529,8 @@ public String promptUser ()
     // Note: Never call promptUser with the AWT-EventThread0 thread!  Spawn a
     // worker thread if you want to bring up a dialog as a result of an action
     // or other AWT event.
-    show();
+    setVisible(true);
+    toFront();
 
     return answer;
 }

@@ -41,7 +41,8 @@ public class TypicalGui extends JFrame
 
         allowClosing();
         setSize (640, 480);
-        show();
+        setVisible(true);
+        toFront();
     }
 
 
