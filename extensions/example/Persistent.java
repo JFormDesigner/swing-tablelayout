@@ -92,7 +92,7 @@ public void windowClosing (WindowEvent e)
                 TableLayoutPersistenceDelegate.readWindow("Test.xml");
             window.setTitle("don't reshow");
             window.addWindowListener(new Persistent());
-            window.setVisible();
+            window.setVisible(true);
             window.toFront();
         }
         else
