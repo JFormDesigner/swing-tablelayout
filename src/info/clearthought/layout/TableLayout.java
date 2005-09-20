@@ -479,10 +479,6 @@ public TableLayoutConstraints getConstraints (Component component)
  *
  * @param component     desired component.  This parameter cannot be null.
  * @param constraint    new set of constraints.  This parameter cannot be null.
- *
- * @return If the given component is found, the constraints associated with
- *         that component.  If the given component is null or is not found,
- *         null is returned.
  */
 
 public void setConstraints
@@ -1317,9 +1313,6 @@ protected int assignRelativeSize (int z, int availableSize)
  *
  * @param z                indicates row or column
  * @param availableSize    amount of space available in the container
- *
- * @return the amount of space available after fill crs have been assigned
- *         sizes
  */
 
 protected void assignFillSize (int z, int availableSize)
