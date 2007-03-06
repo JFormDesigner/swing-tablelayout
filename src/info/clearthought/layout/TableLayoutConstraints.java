@@ -132,6 +132,7 @@ public TableLayoutConstraints
         (hAlign == RIGHT) ||
         (hAlign == CENTER) ||
         (hAlign == FULL) ||
+        (hAlign == LEADING) ||
         (hAlign == TRAILING))
     {
         this.hAlign = hAlign;
