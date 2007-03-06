@@ -24,7 +24,6 @@ public class BidiTest extends JFrame implements ActionListener
 	
 	
 	
-	private JButton buttonChangeOrientation;
 	private JCheckBox checkboxIsLtr;
 	private JCheckBox checkboxIsHzn;
 	private JCheckBox checkboxTableLayout;

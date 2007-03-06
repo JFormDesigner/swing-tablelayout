@@ -41,9 +41,7 @@ package example2;
 import java.awt.*;
 import java.awt.event.*;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.util.*;
 import info.clearthought.layout.TableLayout;
 import info.clearthought.layout.TableLayoutConstraints;
 
