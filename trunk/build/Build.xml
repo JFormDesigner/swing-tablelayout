@@ -9,6 +9,11 @@
 
 <project name="projectTableLayout" default="all" basedir="..">
 
+  <!-- Date -->
+  <tstamp>
+    <format property="date" pattern="yyyy-MM-dd"/>
+  </tstamp>
+  
   <!-- Path properties -->
   <property name="dirSource" value="src"/>
   <property name="dirClasses" value="classes"/>
@@ -22,18 +27,24 @@
     <delete dir="${dirClasses}"/>
     <delete dir="${dirJavadoc}"/>
     <delete dir="${dirJar}"/>
+    <delete dir="${dirTemp}"/>
   </target>
   
   <!-- Creates the essential output directories -->
   <target name="setup">
     <mkdir dir="${dirClasses}"/>
+    <mkdir dir="${dirClasses}/1.5"/>
+    <mkdir dir="${dirClasses}/1.4"/>
+    <mkdir dir="${dirClasses}/1.1"/>
     <mkdir dir="${dirJavadoc}"/>
     <mkdir dir="${dirJar}"/>
   </target>
   
   <!-- Builds all TableLayout classes -->
   <target name="buildTableLayout" depends="setup">
-    <javac srcdir="${dirSource}" destdir="${dirClasses}"/>
+    <javac target="1.5" srcdir="${dirSource}" destdir="${dirClasses}/1.5"/>
+    <javac target="1.4" srcdir="${dirSource}" destdir="${dirClasses}/1.4"/>
+    <javac target="1.1" srcdir="${dirSource}" destdir="${dirClasses}/1.1"/>
   </target>
   
   <!-- Generates JavaDoc files -->
@@ -49,35 +60,56 @@
   
   <!-- Generates the jar files for distribution -->
   <target name="jar" depends="buildTableLayout, javadoc">
-    <jar destfile="${dirJar}/TableLayout-src.jar" basedir="${dirSource}"
-     includes="info/**"/>
-    <jar destfile="${dirJar}/TableLayout-javadoc.jar" basedir="${dirJavadoc}"/>
-    <jar destfile="${dirJar}/TableLayout.jar" basedir="${dirClasses}"
-     includes="info/**"/>
+    <jar destfile="${dirJar}/TableLayout-src-${date}.jar" basedir="${dirSource}" includes="info/**"/>
+    <jar destfile="${dirJar}/TableLayout-javadoc-${date}.jar" basedir="${dirJavadoc}"/>
+    <jar destfile="${dirJar}/TableLayout-bin-jdk1.5-${date}.jar" basedir="${dirClasses}/1.5" includes="info/**"/>
+    <jar destfile="${dirJar}/TableLayout-bin-jdk1.4-${date}.jar" basedir="${dirClasses}/1.4" includes="info/**"/>
+    <jar destfile="${dirJar}/TableLayout-bin-jdk1.1-${date}.jar" basedir="${dirClasses}/1.1" includes="info/**"/>
   </target>
   
   <!-- Builds all extensions -->
+  <!-- The extensions only work with Jdk 1.4 and later. --> 
   <target name="buildExtensions" depends="jar">
+    <delete dir="${dirTemp}"/>
   	<mkdir dir="${dirTemp}"/>
-    <javac srcdir="${dirExtensions}" destdir="${dirTemp}"
-      classpath="${dirJar}/TableLayout.jar"/>
-    <javadoc
-       sourcepath="${dirExtensions}"
-       destdir="${dirTemp}"
-       packagenames="info.clearthought.layout.*"
-       author="true"
-       version="true">
+    <mkdir dir="${dirTemp}/1.5"/>
+    <mkdir dir="${dirTemp}/1.4"/>
+    
+    <javac target="1.5" srcdir="${dirExtensions}" destdir="${dirTemp}/1.5"
+     classpath="${dirJar}/TableLayout-bin-jdk1.5-${date}.jar"/>
+    <javac target="1.4" srcdir="${dirExtensions}" destdir="${dirTemp}/1.4"
+     classpath="${dirJar}/TableLayout-bin-jdk1.4-${date}.jar"/>
+    <javadoc sourcepath="${dirExtensions}" destdir="${dirTemp}/JavaDoc" packagenames="info.clearthought.layout.*"
+       author="true" version="true">
     </javadoc>
-    <copy todir="${dirTemp}">
+    
+    <copy todir="${dirTemp}/1.5">
       <fileset dir="${dirExtensions}"/>
     </copy>
-    <jar destfile="${dirJar}/TableLayoutExtensions.jar" basedir="${dirTemp}"
-     includes="**"/>
+    <copy todir="${dirTemp}/1.5/JavaDoc">
+      <fileset dir="${dirTemp}/JavaDoc"/>
+    </copy>
+    <copy todir="${dirTemp}/1.4">
+      <fileset dir="${dirExtensions}"/>
+    </copy>
+    <copy todir="${dirTemp}/1.4/JavaDoc">
+      <fileset dir="${dirTemp}/JavaDoc"/>
+    </copy>
+    
+    <jar destfile="${dirJar}/TableLayoutExtensions-all-jdk1.5-${date}.jar" basedir="${dirTemp}/1.5" includes="**"/>
+    <jar destfile="${dirJar}/TableLayoutExtensions-all-jdk1.4-${date}.jar" basedir="${dirTemp}/1.4" includes="**"/>
   	<delete dir="${dirTemp}"/>
   </target>
   
   <!-- Builds everything -->
   <target name="all" depends="clean, setup, buildTableLayout, buildExtensions">
+    <mkdir dir="${dirTemp}"/> 
+    <jar destfile="${dirTemp}/Everything-${date}.zip" basedir="${dirJar}" includes="**"/>
+    <move todir="${dirJar}">
+      <fileset file="${dirTemp}/Everything-${date}.zip">
+      </fileset>
+    </move>
+    <delete dir="${dirTemp}"/> 
   </target>
   
 </project>

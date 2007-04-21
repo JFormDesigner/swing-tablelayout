@@ -1,5 +1,8 @@
 @echo off
 
+echo Use Ant build instead
+goto Done
+
 echo --------------------------------
 echo Go to TableLayout root directory
 echo --------------------------------
@@ -52,4 +55,5 @@ echo Return to build directory
 echo -------------------------
 cd build
 
+:Done
 echo Done
