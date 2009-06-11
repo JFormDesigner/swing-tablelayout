@@ -253,7 +253,7 @@ import java.lang.reflect.*;
  * }
  * </pre>
  *
- * @version 4.0 September 14, 2005
+ * @version 4.1 June 10, 2009
  * @author  Daniel E. Barbalace
  */
 
@@ -1478,7 +1478,16 @@ protected int assignPrefMinSize
                             else if (crSpec[z][entryCr] == FILL)
                                 continue nextComponent;
                         }
-
+                    
+                    // Adjust remaining size by eliminating space for gaps between the crs this component occupies
+                    int numCrOccupiedByThisComponent = entry.cr2[z] - entry.cr1[z] + 1;
+                    
+                    if (numCrOccupiedByThisComponent > 1)
+                    {
+                        int gap = (z == 0) ? hGap : vGap;
+                        size -= (numCrOccupiedByThisComponent - 1) * gap;
+                    }
+                    
                     // Divide the size evenly among the adjustable crs
                     size = (int) Math.ceil(size / (double) numAdjustable);
 
