@@ -1,0 +1,168 @@
+<!doctype html public "-//w3c/dtd xthml 1.0 strict//en"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+	<head>
+		<title>JComboBoxFixed</title>
+	</head>
+	<body>
+	  <p><a href="../index.html">Back to TableLayout project</a></p>
+	
+	  <p><b>License</b></p>
+	  <p>
+	    There is none.  So don't even ask!  This is public domain, no restrictions at all.  Use it however you want.
+	  </p>
+	  
+	  <p><b>Legal Disclaimer</b></p>
+	  <p>
+		THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+ 		WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ 		OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ 		DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR, AFFILATED BUSINESSES,
+ 		OR ANYONE ELSE BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ 		SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+		LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+		USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+		ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+		OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+		OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ 		SUCH DAMAGE.
+	  </p>
+	  <p>English Translation: Running this code might turn you into a werewolf.  On the bright side, cool fangs!</p>
+	  <hr/>
+	  
+	  <p><b>How to use this class</b></p>
+	  <p>
+	    Where you were doing a <code>JComboBox combo = new JComboBox(...);</code> instead do
+	    <code>JComboBoxFixed combo = new JComboBoxFixed(...);</code>.
+	  </p>
+	  
+	  <p><b>Source code for JComboBoxFixed.java</b></p>
+	  <pre>
+import java.awt.event.KeyEvent;
+import java.lang.reflect.Field;
+
+import javax.swing.JComboBox;
+
+
+
+/**
+ * A class that fixes the bug described in the Java bug database as bug 4199622.  See
+ * http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4199622.
+ * 
+ * Note that as this workaround uses some aspects of reflection, it will require elevated rights in WebStart, applets, and other
+ * restricted Java runtimes.
+ * 
+ * @author Daniel E. Barbalace
+ */
+
+public class JComboBoxFixed extends JComboBox
+{
+    /** Used to prevent duplicate ActionEvents if the user presses [ENTER] on the item already selected. */
+    private Object lastSelectedObject = null;
+    
+    
+    
+    /**
+     * Overrides the JComboBox.processKeyEvent to alter the behavior of the [ENTER] key.  This implementation allows the
+     * [ENTER] key to generate ActionEvents in place of the ones filtered by the overridden "setSelectedItem" method.
+     */
+    
+    public void processKeyEvent (KeyEvent e)
+    {
+        boolean shouldFireActionEvent = false;
+        
+        if (e.getKeyCode() == KeyEvent.VK_ENTER && (e.getID() & KeyEvent.KEY_PRESSED) == KeyEvent.KEY_PRESSED)
+        {
+            Object currentlySelectedObject = getSelectedItem();
+            
+            if (currentlySelectedObject != null && currentlySelectedObject != lastSelectedObject)
+                shouldFireActionEvent = true;
+            
+            lastSelectedObject = currentlySelectedObject;
+        }
+        
+        super.processKeyEvent(e);
+        
+        if (shouldFireActionEvent)
+            fireActionEvent();
+    }
+    
+    
+    
+    /**
+     * Overrides the JComboBox.setSelectedItem to filter out the unwanted ActionEvents resulting from navigation of a JComboBox
+     * using the arrow and paging keys.
+     */
+    
+    public void setSelectedItem (Object anObject)
+    {
+        boolean shouldFireActionEvent = true;
+        StackTraceElement [] listSte = Thread.currentThread().getStackTrace();
+        
+        for (StackTraceElement ste : listSte)
+        {
+            String methodName = ste.getMethodName();
+            
+            if ("processKeyBinding".equals(methodName))
+            {
+                shouldFireActionEvent = false;
+                break;
+            }
+            else if ("mouseReleased".equals(methodName))
+            {
+                shouldFireActionEvent = true;
+                break;
+            }
+        }
+        
+        if (shouldFireActionEvent)
+        {
+            super.setSelectedItem(anObject);
+        }
+        else
+        {
+            setFiringActionEvent(true);
+            super.setSelectedItem(anObject);
+            setFiringActionEvent(false);
+        }
+        
+    }
+    
+    
+    
+    /**
+     * Sets the value of the private field JComboBox.firingActionEvent.
+     * 
+     * This method demonstrates the dark side of the force.  You should never do what I'm doing in this method unless absolutely
+     * necessary.  I am only doing this because it is the least intrusive way of altering JComboBox to filter the unwanted
+     * ActionEvents.
+     * 
+     * @param value
+     *        Value to which to set the "firingActionEvent" field.
+     */
+    
+    private void setFiringActionEvent (boolean value)
+    {
+        try
+        {
+            Class <? extends Object> c = this.getClass().getSuperclass();
+            Field field = c.getDeclaredField("firingActionEvent");
+            field.setAccessible(true);
+            field.set(this, value);
+            field.setAccessible(false);
+        }
+        catch (NoSuchFieldException ex)
+        {
+            ex.printStackTrace();
+        }
+        catch (IllegalAccessException ex)
+        {
+            ex.printStackTrace();
+        }
+    }
+}
+	  </pre>
+	</body>
+</html>
+	
