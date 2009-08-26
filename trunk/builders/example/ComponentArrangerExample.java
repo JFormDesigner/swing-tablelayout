@@ -114,68 +114,81 @@
  * ====================================================================
  */
 
-package info.clearthought.layout;
+package example;
 
+import info.clearthought.layout.ComponentArranger;
+import info.clearthought.layout.TableLayout;
+import info.clearthought.layout.TableLayoutConstants;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 
 /**
- * TableLayoutConstants define the constants used by all the TableLayout
- * classes.
- *
- * @version 3.0 February 15, 2004
- * @author  Daniel E. Barbalace
+ * Demonstrates how to use the ComponentArranger layout builder.
+ * 
+ * @author Daniel E. Barbalace
  */
 
-public interface TableLayoutConstants
+public final class ComponentArrangerExample
 {
-
-
-
-/** Indicates that the component is left justified in its cell */
-public static final int LEFT = 0;
-
-/** Indicates that the component is top justified in its cell */
-public static final int TOP = 0;
-
-/** Indicates that the component is centered in its cell */
-public static final int CENTER = 1;
-
-/** Indicates that the component is full justified in its cell */
-public static final int FULL = 2;
-
-/** Indicates that the component is bottom justified in its cell */
-public static final int BOTTOM = 3;
-
-/** Indicates that the component is right justified in its cell */
-public static final int RIGHT = 3;
-
-/** Indicates that the component is leading justified in its cell.
-    Leading justification means components are left justified if their container
-    is left-oriented and right justified if their container is right-oriented.
-    Trailing justification is opposite.
-    see java.awt.Component#getComponentOrientation */ 
-public static final int LEADING = 4;
-
-/** Indicates that the component is trailing justified in its cell.
-    Trailing justification means components are right justified if their
-    container is left-oriented and left justified if their container is
-    right-oriented. Leading justification is opposite.
-    see java.awt.Component#getComponentOrientation */ 
-public static final int TRAILING = 5;
-
-/** Indicates that the row/column should fill the available space */
-public static final double FILL = -1.0;
-
-/** Indicates that the row/column should be allocated just enough space to
-    accommodate the preferred size of all components contained completely within
-    this row/column. */
-public static final double PREFERRED = -2.0;
-
-/** Indicates that the row/column should be allocated just enough space to
-    accommodate the minimum size of all components contained completely within
-    this row/column. */
-public static final double MINIMUM = -3.0;
-
-
-
+    public static void main (String [] args)
+    {
+        example1();
+    }
+    
+    
+    
+    private static void example1 ()
+    {
+        // Create frame
+        JFrame frame = new JFrame("Example 1");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        JPanel contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        frame.setContentPane(contentPane);
+        
+        // Create controls
+        JLabel labelSource = new JLabel("Source file");
+        JLabel labelDestination = new JLabel("Destination file");
+        JTextField textboxSource = new JTextField(30);
+        JTextField textboxDestination = new JTextField(30);
+        JButton buttonBrowseSource = new JButton("Browse...");
+        JButton buttonBrowseDestination = new JButton("Browse...");
+        JLabel labelHi = new JLabel("Hello");
+        JTextArea textboxBig = new JTextArea();
+        textboxBig.setText("Just a big old text area control.");
+        JScrollPane scrollPane = new JScrollPane(textboxBig);
+        JButton buttonHelp = new JButton("Help");
+        JButton buttonCancel = new JButton("Cancel");
+        JButton buttonOk = new JButton("OK");
+        JPanel panelButton = new JPanel();
+        
+        // Create a subpanel for the buttons because we want to lay them out separately
+        ComponentArranger.arrange(5, 5, new Object []
+            {panelButton,           TableLayout.FILL, TableLayout.FILL, TableLayout.FILL,
+             TableLayout.PREFERRED, buttonHelp,       buttonCancel,     buttonOk});
+        
+        // Create layout and add controls in one step, then apply any alignments
+        TableLayout layout = ComponentArranger.arrange(5, 5, new Object []
+            {contentPane,            TableLayout.PREFERRED, TableLayout.FILL,   TableLayout.PREFERRED,
+             TableLayout.PREFERRED,  labelSource,           textboxSource,      buttonBrowseSource,
+             TableLayout.PREFERRED,  labelDestination,      textboxDestination, buttonBrowseDestination,
+             TableLayout.FILL,       null,                  scrollPane,         scrollPane,
+             TableLayout.PREFERRED,  labelHi,               scrollPane,         scrollPane,
+             5,
+             TableLayout.PREFERRED,  panelButton,           panelButton,        panelButton});
+        
+        ComponentArranger.alignComponent(layout, panelButton, TableLayoutConstants.CENTER, TableLayoutConstants.CENTER);
+        
+        // Show the frame we just made
+        frame.pack();
+        frame.setVisible(true);
+    }
 }

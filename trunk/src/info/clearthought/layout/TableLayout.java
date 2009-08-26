@@ -176,7 +176,7 @@ import java.lang.reflect.*;
  * <p>Horizontal and vertical gaps can be placed between rows and columns in two
  * ways.  If uniformed gaps are desired, the <code>setHGap</code> and <code>
  * setVGap</code> methods may be used.  To vary the size of gaps, simply use
- * empty rows and columns with absolute sizes.  Similiarly, to make a border
+ * empty rows and columns with absolute sizes.  Similarly, to make a border
  * around a container that does not have insets, use empty rows and columns
  * along the edges of the container.</p>
  * 
@@ -199,7 +199,7 @@ import java.lang.reflect.*;
  * <p>For manual coding, a quicker and easier way to specify constraints is with
  * a short string in the form "x1, y1, x2, y2, hAlign, vAlign" where (x1, y1)
  * identifies the top left cell (column x1, row y1) for the component and
- * (x2, y2) identfies the bottom right cell.  x2 and y2 are optional.  If they
+ * (x2, y2) identifies the bottom right cell.  x2 and y2 are optional.  If they
  * are not specified, the component will occupy only one cell, (x1, y1).
  * hAlign and vAlign are also optional with default values of full
  * justification.  Alignments may be spelt fully as in "LEFT" or abbreviated as
@@ -223,7 +223,7 @@ import java.lang.reflect.*;
  * 
  * <b>Preferred sizes</b>
  * 
- * <p>Often it is desireable to make a row or column just large enough to ensure
+ * <p>Often it is desirable to make a row or column just large enough to ensure
  * that all components contained partially or wholly in that row or column are
  * their preferred size.  To make this easy, there is a constant called
  * <code>PREFERRED</code> that can be used to specify row or column sizes.
@@ -335,7 +335,7 @@ import java.lang.reflect.*;
  * }
  * </pre>
  *
- * @version 4.1 June 10, 2009
+ * @version 4.2 August 26, 2009
  * @author  Daniel E. Barbalace
  */
 
@@ -371,7 +371,7 @@ protected static final int R = 1;
 /** Used to minimize reflection calls */
 protected static boolean checkForComponentOrientationSupport = true;
 
-/** Method used to get component orientation while preserving compatability
+/** Method used to get component orientation while preserving compatibility
     with earlier versions of java.awt.Container.  Necessary for supporting
     older JDKs and MicroEdition versions of Java. */
 protected static Method methodGetComponentOrientation;
@@ -986,7 +986,7 @@ public void insertRow (int i, double size)
  * @param size    size of cr being inserted
  */
 
-public void insertCr (int z, int i, double size)
+protected void insertCr (int z, int i, double size)
 {
     // Make sure position is valid
     if ((i < 0) || (i > crSpec[z].length))
@@ -1173,7 +1173,7 @@ public String toString ()
  * Valid rows are 0 through 4, inclusively.  This method is useful for
  * debugging.
  *
- * @return a list of TableLayout.Entry instances refering to the invalid
+ * @return a list of TableLayout.Entry instances referring to the invalid
  *         constraints and corresponding components
  *
  * @see #getOverlappingEntry
@@ -1225,7 +1225,7 @@ public java.util.List getOverlappingEntry ()
 
     try
     {
-        // Count contraints
+        // Count constraints
         int numEntry = list.size();
 
         // If there are no components, they can't be overlapping
@@ -1322,7 +1322,7 @@ protected void calculateSize (Container container)
     assignFillSize(C, availableWidth);
     assignFillSize(R, availableHeight);
 
-    // Calculate cr offsets for effeciency
+    // Calculate cr offsets for efficiency
     calculateOffset(C, inset);
     calculateOffset(R, inset);
 
