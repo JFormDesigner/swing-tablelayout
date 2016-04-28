@@ -9,4 +9,4 @@
 
 ## License
 
-[The Clearthought Software License, Version 2.0](https://github.com/JFormDesigner/swing-tablelayout/blob/master/src/info/clearthought/layout/TableLayout.java)
+[The Clearthought Software License, Version 2.0](src/info/clearthought/layout/TableLayout.java)
